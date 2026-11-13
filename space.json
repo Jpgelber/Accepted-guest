@@ -1,0 +1,13 @@
+{
+  "runtime": "typescript",
+  "platformVersion": 28,
+  "entry": "client/dist/index.html",
+  "name": "Approved Guest",
+  "slug": "cbi-event-registration-check-in",
+  "managedCronJobs": [
+    { "id": "approved-guest-health-monitor", "action": "runHealthMonitor", "every": "5m", "owner": "space:cbi-event-registration-check-in" },
+    { "id": "approved-guest-attendance-alerts-hourly", "action": "runAttendanceAlerts", "every": "1h", "owner": "space:cbi-event-registration-check-in" },
+    { "id": "approved-guest-subscription-lifecycle-daily", "action": "runSubscriptionLifecycle", "every": "24h", "owner": "space:cbi-event-registration-check-in" },
+    { "id": "approved-guest-deleted-event-purge-daily", "action": "purgeExpiredDeletedEvents", "every": "24h", "owner": "space:cbi-event-registration-check-in" }
+  ]
+}
